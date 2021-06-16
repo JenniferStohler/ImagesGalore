@@ -1,5 +1,5 @@
-export const dev = window.location.origin.includes('localhost')
-export const baseURL = dev ? 'http://localhost:3000' : ''
-export const domain = ''
-export const audience = ''
-export const clientId = ''
+export const baseURL = dev ? 'https://localhost:5001' : ''
+export const domain = '{{AUTH DOMAIN}}'
+export const audience = '{{AUTH AUDIENCE}}'
+export const clientId = '{{AUTH CLIENT ID}}'
+
