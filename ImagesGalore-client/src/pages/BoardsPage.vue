@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col text-center text-dark">
         <h1 class="">
-          New Images? Add them to your board.
+          Here are your boards
         </h1>
       </div>
     </div>
@@ -28,5 +28,50 @@
         </div>
       </form>
     </div>
+    <div class="row">
+      <BoardComponent v-for="board in state.boards" :key="board.id" :board-prop="board" />
+    </div>
   </div>
 </template>
+
+<!------JS CODE STARTS HERE ------->
+<script>
+import BoardComponent from '../components/BoardsComponent'
+import { reactive, computed, onMounted } from 'vue'
+import { AppState } from '../AppState'
+import { boardsService } from '../services/BoardsService'
+import Notification from '../utils/Notification'
+
+export default {
+  name: 'Boards',
+
+  setup() {
+    const state = reactive({
+      boards: computed(() => AppState.boards),
+      newBoard: {}
+    })
+    onMounted(async() => {
+      try {
+        await boardsService.getAllBoards()
+      } catch (error) {
+        Notification.toast('Error:' + error, 'error')
+      }
+    })
+    return {
+      state,
+      async createBoard() {
+        try {
+          await boardsService.createBoard(state.newBoard)
+          state.newBoard = {}
+          await boardsService.getAllBoards()
+          Notification.toast('Board Created!', 'success')
+        } catch (error) {
+          Notification.toast('Error:' + error, 'error')
+        }
+      }
+    }
+  },
+  components: {
+    BoardComponent
+  }
+}
