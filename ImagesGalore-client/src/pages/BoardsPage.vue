@@ -36,7 +36,7 @@
 
 <!------JS CODE STARTS HERE ------->
 <script>
-import BoardsComponent from '../components/BoardsComponent'
+import BoardComponent from '../components/BoardComponent'
 import { reactive, computed, onMounted } from 'vue'
 import { AppState } from '../AppState'
 import { boardsService } from '../services/BoardsService'
@@ -72,6 +72,6 @@ export default {
     }
   },
   components: {
-    BoardsComponent
+    BoardComponent
   }
 }
