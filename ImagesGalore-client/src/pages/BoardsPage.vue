@@ -21,7 +21,7 @@
             >
           </div>
           <div class="col">
-            <button type="submit" class="btn btn-success" title="Click to Add New Board">
+            <button type="submit" class="btn btn-success" title="Add New Board">
               Add Board
             </button>
           </div>
