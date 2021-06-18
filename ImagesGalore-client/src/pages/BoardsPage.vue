@@ -21,7 +21,7 @@
             >
           </div>
           <div class="col">
-            <button type="submit" class="btn btn-success" title="Add New Board">
+            <button type="submit" class="btn btn-success" title="Click to Add New Board">
               Add Board
             </button>
           </div>
@@ -36,7 +36,7 @@
 
 <!------JS CODE STARTS HERE ------->
 <script>
-import BoardComponent from '../components/BoardsComponent'
+import BoardsComponent from '../components/BoardsComponent'
 import { reactive, computed, onMounted } from 'vue'
 import { AppState } from '../AppState'
 import { boardsService } from '../services/BoardsService'
@@ -72,6 +72,6 @@ export default {
     }
   },
   components: {
-    BoardComponent
+    BoardsComponent
   }
 }

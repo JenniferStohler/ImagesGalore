@@ -1,7 +1,7 @@
 <template>
-  <div class="home flex-grow-1 d-flex flex-column align-items-center justify-content-center">
-    <router-link :to="{ name: 'Boards' }" class="nav-link">
-      <button type="button" class="btn btn-primary" title="click to go to your boards">
+  <div class="home flex-grow-1 d-flex flex-column align-items-center justify-content-center bg-secondary">
+    <router-link :to="{ name:'Boards' }" class="nav-link">
+      <button type="button" class="btn btn-primary" title="Go to your boards">
         Go to Your Boards
       </button>
     </router-link>
