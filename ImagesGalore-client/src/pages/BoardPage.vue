@@ -16,7 +16,7 @@ import { AppState } from '../AppState'
 import { boardsService } from '../services/BoardsService'
 import Notification from '../utils/Notification'
 import { useRoute } from 'vue-router'
-import ImagesComponent from '../components/ImagesComponent.vue'
+import ImagesComponent from '../components/ImagesComponent'
 import { imagesService } from '../services/ImagesService'
 
 export default {
@@ -26,7 +26,8 @@ export default {
     const route = useRoute()
     const state = reactive({
       board: computed(() => AppState.activeBoard),
-      images: computed(() => AppState.images)
+      images: computed(() => AppState.images),
+      newImage: {}
     })
 
     onMounted(async() => {
